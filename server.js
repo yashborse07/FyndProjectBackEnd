@@ -15,7 +15,8 @@ app.use(cors());
 
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect("mongodb+srv://yashborse7601:G@nuupat!l717@cluster0.4aqufzv.mongodb.net/NashikPloggers", {
+mongoose.connect("mongodb+srv://yashborse9850:yashborse07@cluster0.hm52g9z.mongodb.net/NashikPloggers", {
+  dbName:"NashikPloggers",
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
