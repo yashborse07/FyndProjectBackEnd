@@ -13,6 +13,19 @@ router.post('/form-data', async (req, res) => {
     res.status(400).send(err);
   }
 });
+
+router.get('/all-form-data', async (req, res) => {
+  try {
+    const allformData = await formDataScema.find();
+    res.json(allformData);
+    
+  } catch (err) {
+    
+    res.json({ err})
+  }
+});
+
+
 router.post('/donation-Data', async (req, res) => {
   try {
     const donationData = new donationDataScema(req.body);
