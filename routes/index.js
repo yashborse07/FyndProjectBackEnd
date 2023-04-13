@@ -35,6 +35,16 @@ router.post('/donation-Data', async (req, res) => {
     res.status(400).send(err);
   }
 });
+router.get('/all-donation-Data', async (req, res) => {
+  try {
+    const alldonationData = await donationDataScema.find();
+    res.json(alldonationData);
+    
+  } catch (err) {
+    
+    res.json({ err})
+  }
+});
 router.post('/feedback-Data', async (req, res) => {
   try {
     const feedbackData = new feedbackDataScema(req.body);
@@ -43,5 +53,15 @@ router.post('/feedback-Data', async (req, res) => {
   } catch (err) {
     res.status(400).send(err);
   }
-})
+});
+router.get('/all-feedback-Data', async (req, res) => {
+  try {
+    const allfeedbackData = await feedbackDataScema.find();
+    res.json(allfeedbackData);
+    
+  } catch (err) {
+    
+    res.json({ err})
+  }
+});
 module.exports = router
